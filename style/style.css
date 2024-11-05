@@ -1,0 +1,343 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* first the font */
+@font-face {
+  font-family: rogueHeros;
+  src: url(../font/roguehero.ttf);
+}
+h2,
+h3,
+button,
+a {
+  font-family: rogueHeros, sans-serif;
+  font-weight: 400;
+  color: darkred;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+p {
+  font-family: sans-serif;
+}
+h2 {
+  color: black;
+  background-color: darkred;
+  font-size: 3rem;
+}
+
+/* header */
+header {
+  background-image: url(../img/deadpoolFond.jpg);
+  background-position: bottom;
+  background-size: contain;
+  height: 100vh;
+  width: 100%;
+  align-items: end;
+  background-repeat: no-repeat;
+}
+header > nav {
+  background-color: black;
+  width: 100%;
+}
+header > nav > ul {
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+header > nav > ul > li {
+  width: 15%;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* les titre de sections */
+#synopsis,
+#lesPerso,
+#bonus {
+  justify-content: center;
+  align-items: center;
+  margin: 3rem 0;
+}
+#synopsis > div,
+#lesPerso > div,
+#bonus > div {
+  margin: 0 5rem;
+}
+/* iframe integration */
+iframe {
+  display: block;
+  margin: auto;
+  margin-bottom: 5rem;
+}
+/* article section 1 */
+section:first-child > article {
+  width: 70%;
+  margin-bottom: 5rem;
+}
+section:first-child > article > div {
+  margin-left: 3rem;
+}
+section:first-child > article > div > h3 {
+  margin: 5% 0;
+}
+
+/* section 2 */
+section:nth-child(2) > div {
+  gap: 2%;
+  align-items: start;
+  justify-content: space-around;
+}
+
+section:nth-child(2) > div.isFlex.w80.marginAuto > article {
+  flex-direction: column;
+  gap: 1.5rem;
+}
+section:nth-child(2) > div > article > h3 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+/* section bonus funko */
+section:nth-child(3) > h3,
+section:nth-child(4) > h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+figure {
+  justify-content: space-around;
+}
+
+/* section bonus comics */
+section:nth-child(4) {
+  background-color: #cdcd0d;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+section:nth-child(4) > h3 {
+  text-align: center;
+  margin-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  background-color: white;
+}
+section:nth-child(4) > figure {
+  align-items: center;
+}
+
+section:nth-child(4) > figure > div {
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+button {
+  padding: 0.5rem 3rem;
+  border: transparent;
+  border-radius: 100vmax;
+  text-align: center;
+}
+
+/* footer */
+footer {
+  background-color: black;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* technical classes */
+.w15 {
+  width: 15%;
+}
+.w20 {
+  width: 20%;
+}
+.w30 {
+  width: 30%;
+}
+.w40 {
+  width: 40%;
+}
+.w80 {
+  width: 80%;
+}
+.w100 {
+  width: 100%;
+}
+.logoContainer {
+  width: 7%;
+}
+.isFlex {
+  display: flex;
+}
+.isRelative {
+  position: relative;
+}
+.marginAuto {
+  margin: auto;
+}
+.diplayNone {
+  display: none;
+}
+.isWrapped {
+  flex-wrap: wrap;
+}
+
+/* responsive mobile */
+@media screen and (max-width: 576px) {
+  /* modify the bg image */
+  header {
+    background-image: url(../img/fondIphone.jpg);
+    background-position: bottom;
+    background-size: cover;
+    height: 70vh;
+    width: 100%;
+    align-items: end;
+    background-repeat: no-repeat;
+  }
+  /* hide the part not include in mobile */
+  .notInMobile {
+    display: none;
+  }
+  /* stop hidding the mobile part */
+  nav > ul > li.diplayNone {
+    display: block;
+  }
+  ul.isFlex {
+    justify-content: space-around;
+  }
+  /* bigger logo */
+  .logoContainer {
+    width: 10%;
+  }
+  /* smaller iframe */
+  iframe {
+    width: 80%;
+  }
+  /* change the titles */
+  #synopsis,
+  #lesPerso,
+  #bonus {
+    justify-content: space-around;
+    align-items: center;
+    margin: 1rem 0;
+  }
+  #synopsis > div,
+  #lesPerso > div,
+  #bonus > div {
+    margin: 0 1rem;
+  }
+  h2,
+  h3,
+  button,
+  a {
+    font-size: 1.5rem;
+  }
+  /* modify diplay in section "perso" in colums */
+  section:nth-child(2) > div.isFlex.w80.marginAuto {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+  section:nth-child(2) > div.isFlex.w80.marginAuto > article {
+    width: 60%;
+  }
+  /* modify the display of the funko pop */
+  figure.w80.marginAuto.isFlex.isWrapped {
+    align-items: center;
+  }
+  .orderToDefine:first-child {
+    order: 2;
+  }
+  .orderToDefine:nth-child(2) {
+    order: 1;
+    width: 80%;
+  }
+  .orderToDefine:last-child {
+    order: 3;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+  header {
+    background-image: url(../img/fondIpad.jpg);
+    background-position: bottom;
+    background-size: cover;
+    height: 90vh;
+    width: 100%;
+    align-items: end;
+    background-repeat: no-repeat;
+  }
+  header > nav > ul > li.notInMobile {
+    display: none;
+  }
+  .notInIpad {
+    display: none;
+  }
+  h2,
+  h3,
+  button,
+  a {
+    font-size: 2rem;
+  }
+  #synopsis,
+  #lesPerso,
+  #bonus {
+    justify-content: space-around;
+    align-items: center;
+    margin: 1rem 0;
+  }
+  /* stop hidding the mobile part */
+  nav > ul > li.diplayNone {
+    display: block;
+  }
+  ul.isFlex {
+    justify-content: space-between;
+    width: 50%;
+    margin: auto;
+  }
+  /* bigger logo */
+  .logoContainer {
+    width: 10%;
+  }
+  p {
+    text-align: right;
+  }
+  /* section personage */
+  /* on retire les textes */
+  section:nth-child(2) > div > article > p.notInMobile {
+    display: none;
+  }
+  section:nth-child(2) > div > article {
+    width: 40%;
+    margin-top: 1rem;
+  }
+  /* modify diplay in section "perso" in colums */
+  section:nth-child(2) > div.isFlex.w80.marginAuto {
+    gap: 1rem;
+    align-items: center;
+  }
+  section:nth-child(2) > div.isFlex.w80.marginAuto>article{
+    width: 40%;
+  }
+  /* modify the display of the funko pop */
+  section:nth-child(3)>figure{
+    flex-direction: column;
+    align-items: center;
+  }
+  .orderToDefine:first-child {
+    order: 1;
+    width: 80%;
+  }
+  .orderToDefine:nth-child(2) {
+    order: 3;
+    width: 80%;
+  }
+  .orderToDefine:last-child {
+    order: 2;
+    width: 80%;
+  }
+  section.notInMobile{
+    display: none;
+  }
+}
